@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#081511">
+<meta name="description" content="Garvitt is an AI voice receptionist for HVAC businesses. Hear real workflow demonstrations for appointment booking, rescheduling and cancellation.">
+<title>Garvitt — Never miss another HVAC customer</title>
+<style>
+:root{--bg:#081511;--bg2:#0d1d17;--panel:#10241c;--panel2:#132a21;--line:#244136;--mint:#8af0c0;--green:#42d99b;--white:#f4fbf7;--muted:#a3b7ac;--dim:#71877b;--ink:#102119;--paper:#f3f8f5;--radius:22px;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+header{height:78px;position:sticky;top:0;z-index:20;background:rgba(8,21,17,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(138,240,192,.10)}.nav{height:100%;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px;font-size:21px;font-weight:850;letter-spacing:-.8px}.brandmark{width:37px;height:37px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(145deg,#8af0c0,#32bd85);color:#062017;font-weight:950;box-shadow:0 6px 24px #42d99b25}.navlinks{display:flex;gap:28px;color:#b5c7bd;font-size:13px;font-weight:650}.navlinks a:hover{color:var(--mint)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid transparent;border-radius:12px;padding:13px 19px;background:var(--green);color:#062017;font-size:13px;font-weight:850;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px);background:#75eab5;box-shadow:0 10px 30px #42d99b24}.btn.ghost{background:transparent;color:var(--white);border-color:#365447}.btn.ghost:hover{border-color:var(--mint);color:var(--mint);box-shadow:none}.menuBtn{display:none;background:none;border:1px solid var(--line);color:white;border-radius:9px;padding:8px 11px}
+.hero{position:relative;overflow:hidden;padding:94px 0 86px;background:radial-gradient(ellipse at 82% 24%,#17463370 0,transparent 36%),radial-gradient(ellipse at 10% 0%,#133d2d55 0,transparent 40%)}.hero:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.15;background-image:linear-gradient(#8af0c010 1px,transparent 1px),linear-gradient(90deg,#8af0c010 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(to bottom,black,transparent 85%)}.heroGrid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #3d7058;background:#102b20;color:var(--mint);padding:7px 12px;border-radius:99px;font-size:10px;font-weight:850;letter-spacing:1.3px;text-transform:uppercase}.pulse{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px #42d99b20}h1{font-size:clamp(48px,6.2vw,78px);line-height:.99;letter-spacing:-4.4px;margin:23px 0 22px;max-width:700px}h1 span{color:var(--mint)}.heroLead{font-size:17px;color:#b2c4ba;max-width:590px;line-height:1.8}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:29px 0 24px}.micro{font-size:11px;color:#84998e}.proof{display:flex;gap:20px;flex-wrap:wrap;margin-top:27px;color:#a7b9af;font-size:11px}.proof span:before{content:"✓";color:var(--mint);font-weight:900;margin-right:7px}
+.heroCard{border:1px solid #315344;background:linear-gradient(145deg,#132b21,#0c1c15);border-radius:26px;padding:20px;box-shadow:0 30px 90px #0007;position:relative}.cardTop{display:flex;justify-content:space-between;align-items:center;padding:3px 3px 17px;color:#c5d7cd;font-size:10px;font-weight:850;letter-spacing:1.2px}.liveTag{color:var(--mint);display:flex;align-items:center;gap:7px}.heroScreen{background:#081610;border:1px solid #294536;border-radius:17px;padding:21px}.callIdentity{display:flex;align-items:center;gap:12px}.avatar{height:42px;width:42px;border-radius:14px;display:grid;place-items:center;background:#183c2b;color:var(--mint);font-weight:900;font-size:18px}.callIdentity b{display:block;font-size:13px}.callIdentity small{color:#89a195;font-size:10px}.wave{height:68px;display:flex;align-items:center;justify-content:center;gap:4px;margin:14px 0}.wave i{width:3px;border-radius:4px;background:linear-gradient(var(--mint),#36a978);height:var(--h);opacity:.9}.heroQuote{border-left:2px solid var(--green);padding:4px 0 4px 13px;color:#b7c9bf;font-size:12px}.heroQuote strong{color:var(--mint);font-size:9px;letter-spacing:1px;display:block;margin-bottom:5px}.miniSteps{display:flex;gap:8px;margin-top:15px}.miniSteps span{flex:1;background:#12281d;border:1px solid #244434;border-radius:9px;padding:9px 7px;text-align:center;color:#9eb3a7;font-size:9px}.miniSteps b{display:block;color:var(--mint);font-size:12px;margin-bottom:2px}
+.section{padding:92px 0}.section.light{background:var(--paper);color:var(--ink)}.section.dark2{background:var(--bg2)}.center{text-align:center}.kicker{font-size:10px;font-weight:900;letter-spacing:1.8px;color:#55d99d;text-transform:uppercase}.light .kicker{color:#12855b}.section h2{font-size:clamp(32px,4.4vw,49px);line-height:1.12;letter-spacing:-2.2px;margin:13px auto 14px;max-width:790px}.sub{max-width:690px;margin:0 auto 42px;color:#9eb2a7;font-size:14px}.light .sub{color:#66796e}
+.demoLayout{display:grid;grid-template-columns:.95fr 1.05fr;gap:20px;align-items:stretch;text-align:left}.panel{background:#10241b;border:1px solid #284638;border-radius:20px;padding:23px;min-width:0}.light .panel{background:white;border-color:#dce9e1;box-shadow:0 12px 35px #183b2710}.panelHead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}.panelHead b{font-size:13px}.pill{font-size:9px;font-weight:900;letter-spacing:.8px;padding:6px 9px;border-radius:99px;background:#193c2b;color:var(--mint);white-space:nowrap}.light .pill{background:#e2f8ec;color:#087b50}.demoTabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}.tab{border:1px solid #315142;background:#0c1d15;color:#a9bdb1;padding:9px 12px;border-radius:10px;font-size:11px;font-weight:800;cursor:pointer}.tab.active{background:#1c4b35;border-color:#52d79c;color:#c9ffe3}.audioMeta{display:flex;gap:13px;align-items:center}.audioIcon{height:43px;width:43px;display:grid;place-items:center;border-radius:13px;background:#1b402d;color:var(--mint);font-size:20px}.audioMeta b{display:block;font-size:13px}.audioMeta small{display:block;color:#91a79a;font-size:10px;margin-top:2px}.audioPlayer{width:100%;margin:18px 0 4px;accent-color:#42d99b}.playerHint{font-size:10px;color:#8da296;margin:6px 0 0}.transcriptBox{margin-top:18px;border:1px solid #294638;border-radius:14px;overflow:hidden}.transcriptHeader{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#142c20;color:#c7d8ce;font-size:10px;font-weight:900;letter-spacing:.8px}.transcriptHeader small{font-weight:600;color:#8fa699;letter-spacing:0}.transcriptList{max-height:290px;overflow:auto;padding:8px;background:#0b1b13}.line{display:grid;grid-template-columns:52px 1fr;gap:9px;padding:9px 8px;border-radius:8px;color:#b2c4b9;font-size:11px;cursor:pointer}.line:hover,.line.current{background:#183a29;color:#f2fff7}.line time{font-variant-numeric:tabular-nums;color:#7c9b89;font-size:10px;padding-top:2px}.line .speaker{color:var(--mint);font-size:9px;font-weight:900;letter-spacing:.5px;display:block;margin-bottom:2px}.workflow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px}.workflow span{font-size:9px;font-weight:800;color:#c0d4c8;background:#193327;border:1px solid #315543;padding:7px 9px;border-radius:8px}.workflow i{color:var(--mint);font-style:normal}
+.sheetFrame{border:1px solid #2a4738;border-radius:13px;overflow:hidden;background:#fff;color:#24352c}.sheetBar{height:34px;background:#f3f7f4;border-bottom:1px solid #e1e9e4;display:flex;align-items:center;justify-content:space-between;padding:0 12px;color:#425b4c;font-size:10px;font-weight:800}.sheetDots{display:flex;gap:4px}.sheetDots i{width:6px;height:6px;border-radius:50%;background:#9bb1a3}.sheetFrame img{display:block;width:100%;height:auto}.shotCaption{font-size:10px;color:#90a79a;margin:10px 2px 0}.shotGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}.shot{border:1px solid #315142;border-radius:12px;overflow:hidden;background:#0b1b13}.shot img{display:block;width:100%;height:125px;object-fit:cover;object-position:top}.shot p{font-size:10px;color:#b4c7bb;padding:0 10px 9px;margin:8px 0 0}.shot button{display:block;width:100%;border:0;background:none;color:inherit;text-align:left;cursor:zoom-in;padding:0}
+.captionNote{font-size:10px;color:#81988a;margin-top:12px;line-height:1.6}
+.featureGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}.feature{border:1px solid #294537;background:#10241b;border-radius:18px;padding:23px}.featureIcon{width:41px;height:41px;display:grid;place-items:center;border-radius:12px;background:#1b3d2b;color:var(--mint);font-size:18px;margin-bottom:17px}.feature h3{font-size:15px;margin:0 0 8px}.feature p{font-size:12px;color:#9eb2a6;margin:0;line-height:1.75}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}.step{padding:25px;border:1px solid #dce9e1;border-radius:18px;background:white}.stepNo{font-size:10px;font-weight:950;letter-spacing:1.4px;color:#159363}.step h3{font-size:16px;margin:13px 0 8px}.step p{font-size:12px;color:#6d8074;margin:0}.audience{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.audienceBox{border:1px solid #2b4939;border-radius:20px;padding:27px;background:linear-gradient(145deg,#11271d,#0c1b14)}.audienceBox h3{font-size:20px;margin:0 0 12px}.audienceList{display:grid;grid-template-columns:1fr 1fr;gap:10px}.audienceList span{border:1px solid #294638;background:#132b1e;border-radius:10px;padding:12px;color:#c2d5c9;font-size:11px}.faq{max-width:790px;margin:35px auto 0}.faq details{border-bottom:1px solid #dce8e0;padding:17px 3px}.faq summary{font-size:13px;font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:15px}.faq summary:after{content:"＋";color:#138b5c;font-size:18px}.faq details[open] summary:after{content:"−"}.faq p{font-size:12px;color:#687b70;max-width:720px;margin:12px 0 2px}
+.ctaBand{padding:76px 0;background:radial-gradient(ellipse at 85% 50%,#1c563b70,transparent 40%),#0c1d15}.ctaCard{border:1px solid #315442;border-radius:24px;padding:42px;background:linear-gradient(120deg,#12291e,#0c1c14);display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}.ctaCard h2{font-size:clamp(30px,4vw,43px);letter-spacing:-1.7px;line-height:1.1;margin:10px 0}.ctaCard p{font-size:13px;color:#a6b9ad;max-width:610px}.footer{padding:29px 0 36px;border-top:1px solid #20392c;color:#8ca094;font-size:10px}.footTop{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.footLinks{display:flex;gap:20px}.footLinks a:hover{color:var(--mint)}.fineprint{max-width:900px;margin:19px 0 0;color:#71877b;font-size:10px}
+.lightbox{position:fixed;inset:0;background:#000d;z-index:50;display:none;align-items:center;justify-content:center;padding:25px}.lightbox.open{display:flex}.lightbox img{max-width:min(1100px,96vw);max-height:88vh;border-radius:12px}.lightbox button{position:absolute;top:20px;right:25px;background:#fff;color:#111;border:0;border-radius:50%;width:40px;height:40px;font-size:22px;cursor:pointer}
+@media(max-width:900px){.heroGrid,.demoLayout,.audience{grid-template-columns:1fr}.heroGrid{gap:38px}.heroCard{max-width:650px}.featureGrid{grid-template-columns:repeat(2,1fr)}.navlinks{gap:15px}.steps{grid-template-columns:1fr 1fr}.ctaCard{grid-template-columns:1fr}.ctaCard .btn{justify-self:start}}
+@media(max-width:650px){.wrap{width:calc(100% - 30px)}header{height:68px}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;padding:18px 22px;background:#0b1b14;border-bottom:1px solid var(--line);flex-direction:column;gap:16px}.navlinks.open{display:flex}.menuBtn{display:block}.nav>.btn{display:none}.hero{padding:65px 0 58px}.heroGrid{gap:32px}h1{font-size:49px;letter-spacing:-2.8px}.heroLead{font-size:14px}.section{padding:68px 0}.section h2{font-size:34px}.sub{font-size:12px;margin-bottom:30px}.panel{padding:15px}.featureGrid,.steps{grid-template-columns:1fr}.shotGrid{grid-template-columns:1fr 1fr}.shot img{height:90px}.ctaBand{padding:52px 0}.ctaCard{padding:25px}.proof{gap:10px}.footLinks{width:100%;flex-wrap:wrap}.workflow{gap:5px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#top"><span class="brandmark">G</span> garvitt</a>
+<nav class="navlinks" id="navlinks"><a href="#demos">Product demo</a><a href="#workflow">Booking workflow</a><a href="#features">Capabilities</a><a href="#faq">FAQ</a></nav>
+<a class="btn" href="#contact">Request a demo <span>↗</span></a><button class="menuBtn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+</div></header>
+<main id="top">
+<section class="hero"><div class="wrap heroGrid">
+<div><span class="eyebrow"><i class="pulse"></i> AI voice receptionist for HVAC</span>
+<h1>Never miss<br>another <span>HVAC customer.</span></h1>
+<p class="heroLead">Meet Garvitt — an AI voice receptionist that answers customer enquiries, handles common questions, and helps turn conversations into appointment requests.</p>
+<div class="actions"><a class="btn" href="#demos">▶ Hear Garvitt in action</a><a class="btn ghost" href="#contact">Request a demo <span>↗</span></a></div>
+<div class="micro">Real web-call demonstrations · Booking workflows · HVAC-focused</div>
+<div class="proof"><span>Enquiry handling</span><span>Appointment workflows</span><span>Booking updates</span></div></div>
+<div class="heroCard"><div class="cardTop"><span>GARVITT / PRODUCT PREVIEW</span><span class="liveTag"><i class="pulse"></i> RECORDED DEMO</span></div>
+<div class="heroScreen"><div class="callIdentity"><div class="avatar">G</div><div><b>Garvitt AI Receptionist</b><small>HVAC customer conversation</small></div></div>
+<div class="wave" aria-hidden="true">WAVEFORM</div>
+<div class="heroQuote"><strong>EXAMPLE RESPONSE</strong>“The 10 a.m. slot on November 5th with technician Mike is available. Would you like me to confirm this appointment?”</div>
+<div class="miniSteps"><span><b>01</b>Enquiry</span><span><b>02</b>Availability</span><span><b>03</b>Booking</span></div></div>
+<div class="micro" style="margin:13px 3px 0">Illustrative interface. Hear the actual recordings below.</div></div>
+</div></section>
+
+<section class="section" id="demos"><div class="wrap center">
+<div class="kicker">Hear the real demonstrations</div><h2>Real conversations. Real workflow tests.</h2>
+<p class="sub">Listen to the supplied web-call recordings and follow the captions as the conversation plays. Choose a workflow to explore.</p>
+<div class="demoTabs" role="tablist" aria-label="Call demonstration">
+<button class="tab active" data-demo="booking" role="tab" aria-selected="true">01 · Appointment booking</button>
+<button class="tab" data-demo="manage" role="tab" aria-selected="false">02 · Reschedule & cancel</button>
+</div>
+<div class="demoLayout">
+<div class="panel">
+<div class="panelHead"><b id="demoHeading">Appointment booking</b><span class="pill">REAL WEB-CALL AUDIO</span></div>
+<div class="audioMeta"><div class="audioIcon">♫</div><div><b id="audioTitle">Alex · AC repair booking</b><small id="audioDescription">Availability check and appointment confirmation · 1:27</small></div></div>
+<audio id="demoAudio" class="audioPlayer" controls preload="metadata">
+<source src="assets/mp32.MP3" type="audio/mpeg">
+<track id="captionTrack" kind="captions" srclang="en" label="English captions" src="assets/booking-captions.vtt" default>
+Your browser does not support audio playback.
+</audio>
+<p class="playerHint">Press play to listen. Select any caption below to jump to that moment.</p>
+<div class="transcriptBox"><div class="transcriptHeader"><span>CALL TRANSCRIPT</span><small id="transcriptCount">24 caption lines</small></div><div class="transcriptList" id="transcriptList" aria-live="polite"></div></div>
+<div class="workflow" id="workflowTags"><span>Customer details</span><i>→</i><span>Slot checked</span><i>→</i><span>Booking confirmed</span></div>
+</div>
+<div class="panel" id="workflow">
+<div class="panelHead"><b id="sheetHeading">Booking record created</b><span class="pill">SHEET SCREENSHOTS</span></div>
+<div class="sheetFrame"><div class="sheetBar"><span>▦ &nbsp; Garvitt HVAC CRM · demonstration</span><span>Google Sheets view</span></div><img id="mainSheet" src="assets/alex-confirmed-booking.png" alt="Illustrative screenshot of Alex's confirmed AC repair booking in the Garvitt HVAC CRM spreadsheet"></div>
+<p class="shotCaption" id="mainSheetCaption">Alex's AC repair booking · November 5, 2026 · 10:00 AM · Mike · Active</p>
+<div class="shotGrid" id="shotGrid">
+<div class="shot"><button data-full="assets/technician-schedule.png" aria-label="Enlarge technician schedule screenshot"><img src="assets/technician-schedule.png" alt="Technician availability schedule spreadsheet"><p>Technician availability</p></button></div>
+<div class="shot"><button data-full="assets/alex-confirmed-booking.png" aria-label="Enlarge confirmed booking screenshot"><img src="assets/alex-confirmed-booking.png" alt="Alex confirmed booking spreadsheet"><p>Booking confirmed</p></button></div>
+</div>
+<p class="captionNote">Screenshots are supplied demonstration evidence. They are not a live spreadsheet embed. Names, phone numbers and booking details shown in the source screenshots should be replaced with approved demo data before public promotion.</p>
+</div>
+</div></div></section>
+
+<section class="section dark2" id="features"><div class="wrap center">
+<div class="kicker">Built around HVAC conversations</div><h2>More than answering the phone.</h2><p class="sub">A voice-first assistant designed to support the repetitive customer conversations that happen before a service visit.</p>
+<div class="featureGrid">
+<article class="feature"><div class="featureIcon">☎</div><h3>Enquiry handling</h3><p>Respond to common customer questions and guide callers towards the right next step.</p></article>
+<article class="feature"><div class="featureIcon">◷</div><h3>Availability checks</h3><p>Check technician slots against the configured schedule and service-area rules.</p></article>
+<article class="feature"><div class="featureIcon">▦</div><h3>Appointment booking</h3><p>Collect customer details and confirm appointments through the configured booking workflow.</p></article>
+<article class="feature"><div class="featureIcon">↻</div><h3>Reschedule requests</h3><p>Find an existing appointment and help move it to an available time.</p></article>
+<article class="feature"><div class="featureIcon">×</div><h3>Cancellation requests</h3><p>Locate a booking, confirm the customer's intent and process a cancellation.</p></article>
+<article class="feature"><div class="featureIcon">✳</div><h3>Structured information</h3><p>Gather relevant contact, address and service details for the business workflow.</p></article>
+</div></div></section>
+
+<section class="section light"><div class="wrap center"><div class="kicker">A simple process</div><h2>From first enquiry to a clear next step.</h2><p class="sub">The workflow is configured around your business, its service area and technician availability.</p>
+<div class="steps">
+<article class="step"><div class="stepNo">STEP 01</div><h3>A customer gets in touch</h3><p>A customer asks about an HVAC repair, service or appointment.</p></article>
+<article class="step"><div class="stepNo">STEP 02</div><h3>Garvitt handles the conversation</h3><p>It collects relevant details, answers configured questions and checks availability.</p></article>
+<article class="step"><div class="stepNo">STEP 03</div><h3>Your workflow gets updated</h3><p>Where the integration is enabled, booking information is recorded for your team.</p></article>
+</div></div></section>
+
+<section class="section"><div class="wrap audience">
+<div><div class="kicker">Made for service businesses</div><h2 style="margin-left:0">Give every HVAC enquiry a better first response.</h2><p class="sub" style="margin-left:0;margin-bottom:0">Garvitt is aimed at teams that regularly handle repair requests, maintenance enquiries and appointment changes — especially when the office is busy.</p></div>
+<div class="audienceBox"><h3>Designed for teams like yours</h3><div class="audienceList"><span>Air conditioning repair</span><span>HVAC contractors</span><span>Heating services</span><span>Installation businesses</span><span>Maintenance providers</span><span>Local service teams</span></div></div>
+</div></section>
+
+<section class="section light" id="faq"><div class="wrap"><div class="center"><div class="kicker">Questions, answered</div><h2>Good to know before a demo.</h2></div>
+<div class="faq">
+<details><summary>What is Garvitt?</summary><p>Garvitt is an AI voice receptionist concept for HVAC businesses. It is designed to handle customer enquiries and support configured appointment workflows.</p></details>
+<details><summary>Can Garvitt book appointments?</summary><p>The demonstrated workflow checks technician availability and confirms a booking using the configured backend. The exact behaviour depends on the business's schedule, rules and integration setup.</p></details>
+<details><summary>Can it reschedule or cancel appointments?</summary><p>Yes. The supplied demonstration shows an existing appointment being found, moved from 8 AM to 11 AM, and then cancelled after confirmation.</p></details>
+<details><summary>Does it work outside business hours?</summary><p>The AI can be configured to handle enquiries outside office hours. Actual call answering depends on the phone-line deployment and operating configuration. This demo does not establish that a live public phone line is connected.</p></details>
+<details><summary>Can it answer HVAC questions?</summary><p>It can answer common questions when the relevant business information and response rules are configured. Technical or safety-critical issues should be escalated according to your business policy.</p></details>
+<details><summary>Can it work with our existing booking system?</summary><p>That depends on the system and available integration methods. Each deployment needs a compatibility review and testing; compatibility with every platform is not guaranteed.</p></details>
+<details><summary>Are these live phone calls?</summary><p>No. The recordings on this page are web-call demonstrations. Connecting a business telephone number is a separate deployment step.</p></details>
+<details><summary>Is the spreadsheet on this page live?</summary><p>No. The screenshots are visual evidence from the supplied tests. They are shown as demonstration images and are not a live spreadsheet connection.</p></details>
+<details><summary>How do I request a demonstration?</summary><p>Use the request button below to open an email draft. The Use the request button below to open a pre-addressed Garvitt demo request in Gmail. You can review the message and send it from your Gmail account.</p></details>
+</div></div></section>
+
+<section class="ctaBand" id="contact"><div class="wrap"><div class="ctaCard"><div><div class="kicker">See Garvitt in your workflow</div><h2>Ready to stop missing customer enquiries?</h2><p>See how Garvitt could handle incoming HVAC enquiries and appointment requests for your business. Request a walkthrough and tell us what your team needs.</p><div class="micro">No unsupported promises. Just a practical look at the workflow.</div></div><a class="btn" id="contactButton" <a <a class="btn" id="contactButton"
+href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=garvitttsharma13%40gmail.com&amp;su=Garvitt%20demo%20request"
+target="_blank" rel="noopener noreferrer">
+Request your Garvitt demo ↗
+</a>
+</main>
+<footer class="wrap footer"><div class="footTop"><a class="brand" href="#top"><span class="brandmark">G</span> garvitt</a><div class="footLinks"><a href="#demos">Product demo</a><a href="#features">Capabilities</a><a href="#faq">FAQ</a><a href="#contact">Request a demo</a></div><span>© <span id="year"></span> Garvitt</span></div><p class="fineprint">Garvitt is an AI assistant, not an emergency service. This website includes web-call demonstrations and illustrative screenshots. A live business telephone connection, production integrations, technician availability and booking policies must be configured and tested separately. Do not rely on this demo for emergency response.</p></footer>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Expanded spreadsheet screenshot"><button id="closeLightbox" aria-label="Close image">×</button><img id="lightboxImg" alt="Expanded demonstration screenshot"></div>
+<script>
+const transcripts = {
+booking: [{"start": 2.44, "end": 3.08, "speaker": "Agent", "text": "Hello."}, {"start": 4.74, "end": 6.18, "speaker": "Customer", "text": "My name is Alex."}, {"start": 6.48, "end": 8.64, "speaker": "Customer", "text": "I need an AC repair service for my home."}, {"start": 9.24, "end": 13.16, "speaker": "Customer", "text": "My full service address is 123 Main Street, Dallas, Texas."}, {"start": 13.42, "end": 15.6, "speaker": "Customer", "text": "Zip code is 75201."}, {"start": 16.12, "end": 19.74, "speaker": "Customer", "text": "My number is 1-555-010-1234."}, {"start": 20.48, "end": 29.78, "speaker": "Customer", "text": "I'd like to book an appointment for November 5, 2026, preferably at 10 a.m. Could you please tell me if it's available?"}, {"start": 30.5, "end": 33.26, "speaker": "Agent", "text": "Thank you, Alex. I have your details as follows."}, {"start": 33.84, "end": 35.06, "speaker": "Agent", "text": "Name, Alex Shanaran."}, {"start": 35.48, "end": 39.72, "speaker": "Agent", "text": "Phone, 1-555-010-1234."}, {"start": 40.18, "end": 41.7, "speaker": "Agent", "text": "Service, AC repair."}, {"start": 42.24, "end": 45.18, "speaker": "Agent", "text": "Address, 123 Main Street, Dallas, Texas."}, {"start": 46.34, "end": 47.02, "speaker": "Agent", "text": "Zip code, 75201."}, {"start": 47.46, "end": 50.18, "speaker": "Agent", "text": "Preferred appointment, November 5, 2026."}, {"start": 51.0, "end": 55.98, "speaker": "Agent", "text": "At 10 a.m. The 10 a.m. slot on November 5, 2026, with technician Mike is available."}, {"start": 55.98, "end": 58.2, "speaker": "Agent", "text": "Would you like me to confirm this appointment for you?"}, {"start": 59.8, "end": 60.28, "speaker": "Customer", "text": "Yes."}, {"start": 62.02, "end": 71.08, "speaker": "Agent", "text": "Your AC repair appointment is confirmed for November 5, 2026, at 10 a.m. Technician Mike will be visiting your home at 123 Main Street, Dallas, Texas."}, {"start": 72.04, "end": 72.52, "speaker": "Agent", "text": "75201."}, {"start": 72.88, "end": 74.98, "speaker": "Agent", "text": "The estimated service duration is two hours."}, {"start": 75.5, "end": 80.64, "speaker": "Agent", "text": "Your booking ID is GAR-8C59A305."}, {"start": 80.96, "end": 81.72, "speaker": "Agent", "text": "Thank you, Alex."}, {"start": 81.9, "end": 85.06, "speaker": "Agent", "text": "If you need to reschedule or have any questions, feel free to call us."}, {"start": 86.78, "end": 86.88, "speaker": "Customer", "text": "Thank you."}],
+manage: [{"start": 0.0, "end": 0.29, "speaker": "Agent", "text": "Hello."}, {"start": 0.69, "end": 3.87, "speaker": "Customer", "text": "I want to change my appointment from 8am to 11am."}, {"start": 4.43, "end": 7.79, "speaker": "Agent", "text": "Of course. I can help with that. What's your full name"}, {"start": 7.79, "end": 8.23, "speaker": "Agent", "text": "as it appears on the appointment?"}, {"start": 8.51, "end": 11.49, "speaker": "Customer", "text": "My full name is Michael."}, {"start": 11.61, "end": 14.41, "speaker": "Agent", "text": "Thanks Michael. What phone number is registered with the appointment?"}, {"start": 15.63, "end": 18.15, "speaker": "Customer", "text": "214-555-0147."}, {"start": 18.27, "end": 22.13, "speaker": "Agent", "text": "I found your AC repair appointment in Dallas for November 5th at 8am."}, {"start": 22.39, "end": 24.17, "speaker": "Agent", "text": "Is this the appointment you'd like to change?"}, {"start": 25.47, "end": 25.99, "speaker": "Customer", "text": "Yes."}, {"start": 25.99, "end": 31.45, "speaker": "Agent", "text": "Your AC repair appointment is currently November 5th at 8am with Mike."}, {"start": 31.81, "end": 34.21, "speaker": "Agent", "text": "I can move it to 11am that day with Mike."}, {"start": 34.49, "end": 35.99, "speaker": "Agent", "text": "Would you like me to reschedule it?"}, {"start": 37.29, "end": 37.69, "speaker": "Customer", "text": "Yes."}, {"start": 38.15, "end": 43.71, "speaker": "Agent", "text": "Your appointment has been rescheduled to November 5th, 2026 at 11am with Mike."}, {"start": 44.09, "end": 46.41, "speaker": "Customer", "text": "I want to cancel it at 11am."}, {"start": 46.63, "end": 51.49, "speaker": "Agent", "text": "I found your AC repair appointment for November 5th, 2026 at 11am with Mike."}, {"start": 51.87, "end": 53.41, "speaker": "Agent", "text": "Would you like me to cancel this appointment?"}, {"start": 54.71, "end": 55.39, "speaker": "Customer", "text": "Yes."}, {"start": 55.71, "end": 60.93, "speaker": "Agent", "text": "Your AC repair appointment for November 5th, 2026 at 11am has been cancelled."}]
+};
+const configs = {
+booking:{
+heading:"Appointment booking",title:"Alex · AC repair booking",desc:"Availability check and appointment confirmation · 1:27",
+src:"assets/mp32.MP3",vtt:"assets/booking-captions.vtt",sheet:"assets/alex-confirmed-booking.png",
+alt:"Illustrative screenshot of Alex's confirmed AC repair booking in the Garvitt HVAC CRM spreadsheet",
+caption:"Alex's AC repair booking · November 5, 2026 · 10:00 AM · Mike · Active",
+shots:[["assets/technician-schedule.png","Technician availability"],["assets/alex-confirmed-booking.png","Booking confirmed"]],
+tags:["Customer details","Slot checked","Booking confirmed"],sheetHeading:"Booking record created"
+},
+manage:{
+heading:"Reschedule & cancellation",title:"Michael · Appointment update",desc:"Find booking · Move to 11 AM · Cancel · 1:01",
+src:"assets/1mp3.MP3",vtt:"assets/manage-captions.vtt",sheet:"assets/rescheduled-cancelled.png",
+alt:"Illustrative screenshot showing Michael's rescheduled appointment marked cancelled",
+caption:"Michael's AC repair · November 5, 2026 · 11:00 AM · Mike · Cancelled",
+shots:[["assets/booking-before-update.png","Existing 8 AM booking"],["assets/rescheduled-cancelled.png","11 AM appointment cancelled"]],
+tags:["Find 8 AM booking","Move to 11 AM","Cancel confirmed"],sheetHeading:"Appointment updated, then cancelled"
+}
+};
+const audio=document.getElementById('demoAudio');
+const list=document.getElementById('transcriptList');
+let activeDemo='booking';
+function renderTranscript(key){
+ const rows=transcripts[key]; list.innerHTML='';
+ rows.forEach((r,i)=>{
+  const el=document.createElement('div');el.className='line';el.dataset.index=i;
+  const time=document.createElement('time');time.textContent=new Date(r.start*1000).toISOString().slice(14,19);
+  const body=document.createElement('div');const who=document.createElement('span');who.className='speaker';who.textContent=r.speaker.toUpperCase();const msg=document.createElement('span');msg.textContent=r.text;body.append(who,msg);el.append(time,body);
+  el.addEventListener('click',()=>{audio.currentTime=r.start;audio.play().catch(()=>{});});list.append(el);
+ });
+ document.getElementById('transcriptCount').textContent=rows.length+' caption lines';
+}
+function switchDemo(key){
+ if(key===activeDemo && audio.getAttribute('src')===configs[key].src)return;
+ activeDemo=key;const c=configs[key];audio.pause();audio.src=c.src;audio.load();
+ document.getElementById('captionTrack').src=c.vtt;
+ document.getElementById('demoHeading').textContent=c.heading;
+ document.getElementById('audioTitle').textContent=c.title;
+ document.getElementById('audioDescription').textContent=c.desc;
+ document.getElementById('sheetHeading').textContent=c.sheetHeading;
+ const main=document.getElementById('mainSheet');main.src=c.sheet;main.alt=c.alt;
+ document.getElementById('mainSheetCaption').textContent=c.caption;
+ document.getElementById('workflowTags').innerHTML=c.tags.map((t,i)=>`${i?'<i>→</i>':''}<span>${t}</span>`).join('');
+ document.getElementById('shotGrid').innerHTML=c.shots.map(([src,label])=>`<div class="shot"><button data-full="${src}" aria-label="Enlarge ${label} screenshot"><img src="${src}" alt="${label} screenshot"><p>${label}</p></button></div>`).join('');
+ document.querySelectorAll('.tab').forEach(b=>{const on=b.dataset.demo===key;b.classList.toggle('active',on);b.setAttribute('aria-selected',String(on));});
+ renderTranscript(key);
+}
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>switchDemo(b.dataset.demo)));
+renderTranscript('booking');
+audio.addEventListener('timeupdate',()=>{
+ const rows=transcripts[activeDemo];let idx=rows.findIndex(r=>audio.currentTime>=r.start && audio.currentTime<=r.end);
+ document.querySelectorAll('.line').forEach((el,i)=>{el.classList.toggle('current',i===idx);if(i===idx && !el.matches(':hover'))el.scrollIntoView({block:'nearest',behavior:'smooth'});});
+});
+document.getElementById('year').textContent=new Date().getFullYear();
+const menu=document.getElementById('menuBtn'),nav=document.getElementById('navlinks');
+menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}));
+document.addEventListener('click',e=>{
+ const btn=e.target.closest('[data-full]');if(btn){document.getElementById('lightboxImg').src=btn.dataset.full;document.getElementById('lightbox').classList.add('open');}
+});
+function closeBox(){document.getElementById('lightbox').classList.remove('open');}
+document.getElementById('closeLightbox').addEventListener('click',closeBox);
+document.getElementById('lightbox').addEventListener('click',e=>{if(e.target.id==='lightbox')closeBox();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBox();});
+</script>
+</body></html>

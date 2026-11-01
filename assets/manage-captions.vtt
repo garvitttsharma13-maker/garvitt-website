@@ -1,0 +1,61 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:00.290
+Agent: Hello.
+
+00:00:00.690 --> 00:00:03.870
+Customer: I want to change my appointment from 8am to 11am.
+
+00:00:04.430 --> 00:00:07.790
+Agent: Of course. I can help with that. What's your full name
+
+00:00:07.790 --> 00:00:08.230
+Agent: as it appears on the appointment?
+
+00:00:08.510 --> 00:00:11.490
+Customer: My full name is Michael.
+
+00:00:11.610 --> 00:00:14.410
+Agent: Thanks Michael. What phone number is registered with the appointment?
+
+00:00:15.630 --> 00:00:18.150
+Customer: 214-555-0147.
+
+00:00:18.270 --> 00:00:22.130
+Agent: I found your AC repair appointment in Dallas for November 5th at 8am.
+
+00:00:22.390 --> 00:00:24.170
+Agent: Is this the appointment you'd like to change?
+
+00:00:25.470 --> 00:00:25.990
+Customer: Yes.
+
+00:00:25.990 --> 00:00:31.450
+Agent: Your AC repair appointment is currently November 5th at 8am with Mike.
+
+00:00:31.810 --> 00:00:34.210
+Agent: I can move it to 11am that day with Mike.
+
+00:00:34.490 --> 00:00:35.990
+Agent: Would you like me to reschedule it?
+
+00:00:37.290 --> 00:00:37.690
+Customer: Yes.
+
+00:00:38.150 --> 00:00:43.710
+Agent: Your appointment has been rescheduled to November 5th, 2026 at 11am with Mike.
+
+00:00:44.090 --> 00:00:46.410
+Customer: I want to cancel it at 11am.
+
+00:00:46.630 --> 00:00:51.490
+Agent: I found your AC repair appointment for November 5th, 2026 at 11am with Mike.
+
+00:00:51.870 --> 00:00:53.410
+Agent: Would you like me to cancel this appointment?
+
+00:00:54.710 --> 00:00:55.390
+Customer: Yes.
+
+00:00:55.710 --> 00:01:00.930
+Agent: Your AC repair appointment for November 5th, 2026 at 11am has been cancelled.
